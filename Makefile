@@ -1,10 +1,12 @@
 .PHONY: run build
 
+MAIN:=cmd/goserve/main.go
+
 run:
-	go run main.go
+	go run ${MAIN}
 
 build:
-	go build -o goserve cmd/goserve/main.go
+	go build -o bin/goserve ${MAIN}
 
 install:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ${GOPATH}/bin/goserve cmd/goserve/main.go
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ${GOPATH}/bin/goserve ${MAIN}
