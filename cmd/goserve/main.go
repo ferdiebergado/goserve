@@ -12,12 +12,14 @@ import (
 	"github.com/ferdiebergado/goserve/pkg"
 )
 
-const defaultPort = "8888"
-const defaultAddress = "localhost"
-const defaultDir = "."
-const readTimeout = 10
-const writeTimeout = 10
-const idleTimeout = 60
+const (
+	defaultPort    = "8888"
+	defaultAddress = "localhost"
+	defaultDir     = "."
+	readTimeout    = 10
+	writeTimeout   = 10
+	idleTimeout    = 60
+)
 
 func main() {
 	address := flag.String("a", defaultAddress, "network address to bind to")
